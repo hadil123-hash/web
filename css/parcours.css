@@ -1,0 +1,260 @@
+
+@import url('styles.css');
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    font-family: 'Tw Cen MT', sans-serif;
+}
+
+
+.container {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    color: #fff;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+nav .logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    padding-right: 40px;
+    text-align: right;
+    list-style-type: none;
+}
+
+ul li {
+    margin-right: 10px;
+}
+
+ul li a {
+    position: relative;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    transform: translateX(-50%) translateY(-5px);
+    height: 3px;
+    background: #ffa400;
+    transition: 0.3s;
+}
+
+ul li a:hover::after {
+    width: 38%;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+main {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.diplome {
+    position: relative;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+
+@keyframes moveBackgroundText {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.1;
+    }
+}
+
+.background-text {
+    animation: moveBackgroundText 10s infinite ease-in-out;
+}
+
+
+.diploma-image {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.diploma-image:hover {
+    transform: scale(1.05);
+}
+
+
+.parcours-photos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+
+.parcours-photos .photo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.parcours-photos .photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.parcours-photos .photo-container:hover img {
+    transform: scale(1.1);
+}
+
+.parcours-photos .photo-container .photo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.parcours-photos .photo-container:hover .photo-text {
+    opacity: 1;
+}
+
+
+.social-icons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icons a {
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+
+@keyframes zoomAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.parcours-photos img {
+    animation: zoomAnimation 5s infinite;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 4px solid #000;
+}
+
+/* Media Query pour responsive design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding-right: 0;
+    }
+
+    .diplome {
+        padding: 20px;
+    }
+
+    .diploma-image {
+        width: 80%;
+    }
+
+    .social-icons img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .parcours-photos .photo-container {
+        width: 100%;
+        height: auto;
+    }
+}

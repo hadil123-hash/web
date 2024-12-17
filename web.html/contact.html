@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire de Contact</title>
+  <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="../index.html">acceuil</a></li>
+        <li><a href="./competences.html">competences</a></li>
+        <li><a href="./contact.html">contact</a></li>
+        <li><a href="./matiere.html">matiere</a></li>
+        <li><a href="./parcours.html">parcours</a></li>
+        <li><a href="./Quiizz.html">Quiizz</a></li>
+        <li><a href="./temoignage.html">temoignage</a></li>
+        <li><a href="./passion.html">passion</a></li>
+    </ul>
+    </nav>
+
+    <header>
+      <h1>Contactez-moi</h1>
+    </header>
+
+    <main>
+      <section class="contact-form">
+        <div class="form-container">
+          <h2>Envoyez-moi un e-mail</h2>
+          <form action="send_email.php" method="POST">
+            <div class="form-group">
+              <label for="name">Nom :</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email :</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="sujet">Sujet :</label>
+              <input type="text" id="sujet" name="sujet" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message :</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit">Envoyer</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Merci de me contacter</p>
+    </footer>
+  </div>
+</body>
+</html>
